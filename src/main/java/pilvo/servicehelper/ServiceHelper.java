@@ -86,7 +86,7 @@ public class ServiceHelper {
 			response = given().authentication()
 					.basic(DataManager.getInstance().getAuthId(), DataManager.getInstance().getAuthToken()).when().log()
 					.all().get(DataManager.getInstance().getBaseUrl() + Constants.ENDPOINTS
-							+ DataManager.getInstance().getAuthId())
+							+ DataManager.getInstance().getAuthId() + "/")
 					.then().extract().response();
 		} catch (Exception e) {
 			e.printStackTrace();
